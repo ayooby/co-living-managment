@@ -41,8 +41,9 @@ function Signup() {
   }
 
   if (data && data.auth_token.length > 0) {
-    window.localStorage.setItem("token", data.token)
+    window.localStorage.setItem("token", data.token);
     history.go("/my-lists");
+    return;
   }
 
   return (

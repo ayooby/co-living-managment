@@ -18,7 +18,7 @@ function Apartment() {
   });
 
   if (error) {
-    return <Error error={error} />;
+    return <Error error={error.message} />;
   }
 
   if (loading) {

@@ -27,10 +27,9 @@ function Login() {
     loginHandle();
   };
 
-
   useEffect(() => {
     if (error && error.response) {
-      setFormError(error.response.data)
+      setFormError(error.response.data);
     }
   }, [error]);
 
@@ -43,9 +42,11 @@ function Login() {
   }
 
   if (data && data.token.length > 0) {
-    window.localStorage.setItem("token", data.token)
+    window.localStorage.setItem("token", data.token);
     history.go("/my-lists");
+    return;
   }
+
   return (
     <div className="container mt-5">
       <div className="d-flex justify-content-center">
@@ -74,11 +75,12 @@ function Login() {
                     type="text"
                     placeholder="Enter Username"
                   />
-                  {formError.username && formError.username.map((e, key) => (
-                    <Form.Control.Feedback key={key} type="invalid">
-                      {e}
-                    </Form.Control.Feedback>
-                  ))}
+                  {formError.username &&
+                    formError.username.map((e, key) => (
+                      <Form.Control.Feedback key={key} type="invalid">
+                        {e}
+                      </Form.Control.Feedback>
+                    ))}
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
@@ -96,11 +98,12 @@ function Login() {
                       });
                     }}
                   />
-                  {formError.password && formError.password.map((e, key) => (
-                    <Form.Control.Feedback key={key} type="invalid">
-                      {e}
-                    </Form.Control.Feedback>
-                  ))}
+                  {formError.password &&
+                    formError.password.map((e, key) => (
+                      <Form.Control.Feedback key={key} type="invalid">
+                        {e}
+                      </Form.Control.Feedback>
+                    ))}
                 </Form.Group>
                 <Button variant="primary" type="submit">
                   Login
