@@ -30,6 +30,7 @@ In order to create a new list you have to follow these steps:
 * create a new supply item the supply page
 * add supply item to the apartment by using `supplyApartment` page
 
-# Result
+# What to improve
 
-After creating a new list go to the front end page and login with cleaner user and then you will see all the lists.
+* Automation the process of creating a new list everymonth using crontab
+* Making api endpoint for Admin section and List creation.
